@@ -34,11 +34,7 @@
                             <table class="table">
                                 <tbody>
                                 <h3><b>{{$projects->title}}</b> </h3>
-                               Order tasks: <a href ="#" >        <button type="button" rel="tooltip" title="View Project" class="btn btn-info btn-simple btn-xs">
-                                                <i class="fa fa-sort-amount-asc"></i>
-                                            </button></a><a href ="#" >        <button type="button" rel="tooltip" title="View Project" class="btn btn-info btn-simple btn-xs">
-                                                <i class="fa fa-sort-amount-desc"></i>
-                                            </button></a>
+                               
                                             <td class="text-primary">status</td>
                                     <td class="text-primary">Titles</td>
                                     <td class="text-primary">Description</td>

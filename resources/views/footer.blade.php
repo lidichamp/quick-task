@@ -65,7 +65,7 @@
 
         	$.notify({
             	icon: 'pe-7s-alarm',
-            	message: "Task <b></b> - is expiring today."
+            	message: "Task  - is expiring today."
 
             },{
                 type: 'info',

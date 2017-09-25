@@ -33,6 +33,11 @@
                         <div class="table-full-width">
                             <table class="table">
                                 <tbody>
+                                Order tasks: <a href ="{{ action('TaskController@ShowProjectAscending')}}" >        <button type="button" rel="tooltip" title="Ascending" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-sort-amount-asc"></i>
+                                            </button></a><a href ="{{ action('TaskController@ShowProjectDescending')}}">        <button type="button" rel="tooltip" title="Descending" class="btn btn-info btn-simple btn-xs">
+                                                <i class="fa fa-sort-amount-desc"></i>
+                                            </button></a>
                                 <td class="text-primary"> status</td>
                                     <td class="text-primary">Titles</td>
                                     <td class="text-primary">Description</td>
@@ -40,9 +45,9 @@
                                     <td class="text-primary">Deadline</td>
                                     <td class="text-primary">Project</td>
                                     <td class="text-primary">Actions</td>
-                                @foreach($projects as $project)
+                                
                                     <tr>
-                                    @foreach($project->tasks as $task)
+                                    @foreach($tasks as $task)
                                   <!--  <td>
                                             <label class="checkbox">
                                                 <input type="checkbox" value="1" data-toggle="checkbox">
@@ -79,7 +84,7 @@
                                         
                                      </tr>
                                      @endforeach
-                                     @endforeach
+                                    
                                  </tbody>
                              </table>
                          </div>

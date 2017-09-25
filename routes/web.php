@@ -18,6 +18,8 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/addproject/', 'ProjectController@storeProject')->name('addproject');
     Route::post('/addproject/', 'ProjectController@storeProject')->name('addproject');
     Route::get('/addtask/', 'TaskController@getAdd')->name('addtask');
+    Route::get('/showtaskup/', 'TaskController@ShowProjectAscending')->name('showtaskup');
+    Route::get('/showtaskdown/', 'TaskController@ShowProjectDescending')->name('showtaskdown');
     Route::post('/storetask/', 'TaskController@storeTask')->name('storetask');
     Route::post('/addtask/', 'TaskController@getAdd')->name('addtask');
     Route::get('/viewproject/', 'ProjectController@ShowProject')->name('viewproject');
@@ -33,5 +35,6 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/viewmovetask{id}/', 'TaskController@viewmovetask')->name('viewmovetask');
     Route::get('/movetask/{id}/', 'TaskController@movetask')->name('movetask');
     Route::get('/deletetask/{id}/', 'TaskController@getDelete')->name('deletetask');
+    Route::get('/notifications', 'TaskController@notifications');
     
 });

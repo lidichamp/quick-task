@@ -112,8 +112,16 @@
                     <a class="navbar-brand" href="#"></a>
                 </div>
                 <div class="collapse navbar-collapse">
-                   <!-- <ul class="nav navbar-nav navbar-left">
-                        <li>
+                   <ul class="nav navbar-nav navbar-left">
+                   <li class="dropdown">
+            <a class="dropdown-toggle" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <i class="fa fa-globe"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="notificationsMenu" id="notificationsMenu">
+                <li class="dropdown-header">No notifications</li>
+            </ul>
+        </li></ul>
+                        <!-- <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-dashboard"></i>
 								<p class="hidden-lg hidden-md">Dashboard</p>
@@ -129,6 +137,7 @@
 										<b class="caret"></b>
 									</p>
                               </a>
+                              
                               <ul class="dropdown-menu">
                                 <li><a href="#">Notification 1</a></li>
                                 <li><a href="#">Notification 2</a></li>

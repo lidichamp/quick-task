@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Task;
@@ -49,6 +49,31 @@ class TaskController extends Controller
             return view('view_tasks', compact('projects','tasks') );
         
     }
+    public function ShowProjectAscending()
+    {
+        $projects = Project::where('user_id', auth()->id())->get();
+        //$events = Event::orderBy('created_at', 'desc')->get();
+        //$authors = Project::with('tasks')->get();
+        $tasks = Task::with('project')->orderBy('expiry_date','asc')->get();
+       
+        
+        //return view('author_list', compact('authors','books') ); 
+            return view('view_tasks', compact('projects','tasks') );
+        
+    }
+
+    public function ShowProjectDescending()
+    {
+        $projects = Project::where('user_id', auth()->id())->get();
+        //$events = Event::orderBy('created_at', 'desc')->get();
+        //$authors = Project::with('tasks')->get();
+        $tasks = Task::with('project')->orderBy('expiry_date','desc')->get();
+       
+        
+        //return view('author_list', compact('authors','books') ); 
+            return view('view_tasks', compact('projects','tasks') );
+        
+    }
     public function edittask($id)
     {
         // get the nerd
@@ -58,6 +83,23 @@ class TaskController extends Controller
         return view('edit_task', compact('task','id','projects') );
         //return View::make('edit_project')
            // ->with('project', $project);
+    }
+    public function tasktime($id)
+    {
+        $task=Task::find($id)->expirydate->diffInHours(Carbon\Carbon::now(), false);
+        $user=Auth::user();
+        if ( task<=24) {
+            
+            // add this to send a notification
+            $user->notify(new TaskToDo($task));
+
+            return back()->withSuccess("your task{{$task->title}} expires soon");
+        }
+    }
+    public function notifications()
+    {
+        $user=Auth::user();
+        return $user->unreadNotifications()->limit(5)->get()->toArray();
     }
     public function updatetask($id,Request $request)
     {
