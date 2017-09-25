@@ -33,13 +33,15 @@
                         <div class="table-full-width">
                             <table class="table">
                                 <tbody>
-                                Order tasks: <a href ="{{ action('TaskController@ShowProjectAscending')}}" >        <button type="button" rel="tooltip" title="Ascending" class="btn btn-info btn-simple btn-xs">
+                                Order tasks: <a href ="{{ action('TaskController@ShowProjectAscending')}}" >        <button type="button" rel="tooltip" title="sort by closer to deadline" class="btn btn-info btn-simple btn-xs">
                                                 <i class="fa fa-sort-amount-asc"></i>
-                                            </button></a><a href ="{{ action('TaskController@ShowProjectDescending')}}">        <button type="button" rel="tooltip" title="Descending" class="btn btn-info btn-simple btn-xs">
+                                            </button></a><a href ="{{ action('TaskController@ShowProjectDescending')}}">        <button type="button" rel="tooltip" title="sort by farthest from deadline" class="btn btn-info btn-simple btn-xs">
                                                 <i class="fa fa-sort-amount-desc"></i>
                                             </button></a>
                                 <td class="text-primary"> status</td>
-                                    <td class="text-primary">Titles</td>
+                                    <td class="text-primary">Title</td>
+                                    <td class="text-primary">Other Name</td>
+                                    <td class="text-primary">Other Name2</td>
                                     <td class="text-primary">Description</td>
                                     <td class="text-primary">Creation Date</td>
                                     <td class="text-primary">Deadline</td>
@@ -60,7 +62,9 @@
                                         @else
                                         <td>Pending</td>
                                         @endif
-                                        <td> {{$task->title}} {{$task->name1}} {{$task->name2}}</td>
+                                        <td> {{$task->title}} </td>
+                                        <td> {{$task->name1}}</td>
+                                        <td>  {{$task->name2}}</td>
                                         <td> {{$task->description}}</td>
                                         <td> {{$task->add_date}}</td>
                                         <td> {{$task->expiry_date}}</td>

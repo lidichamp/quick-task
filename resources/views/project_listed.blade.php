@@ -36,7 +36,9 @@
                                 <h3><b>{{$projects->title}}</b> </h3>
                                
                                             <td class="text-primary">status</td>
-                                    <td class="text-primary">Titles</td>
+                                    <td class="text-primary">Title</td>
+                                    <td class="text-primary">Other name</td>
+                                    <td class="text-primary">Other name2</td>
                                     <td class="text-primary">Description</td>
                                     <td class="text-primary">Creation Date</td>
                                     <td class="text-primary">Deadline</td>
@@ -54,7 +56,9 @@
                                         <td>Pending</td>
                                         @endif
                                         
-                                        <td> {{$task->title}} {{$task->name1}} {{$task->name2}}</td>
+                                        <td> {{$task->title}}  </td>
+                                        <td> {{$task->name1}}</td>
+                                        <td> {{$task->name2}}</td>
                                         <td> {{$task->description}}</td>
                                         <td> {{$task->add_date}}</td>
                                         <td> {{$task->expiry_date}}</td>

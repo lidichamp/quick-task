@@ -114,9 +114,9 @@
                 <div class="collapse navbar-collapse">
                    <ul class="nav navbar-nav navbar-left">
                    <li class="dropdown">
-            <a class="dropdown-toggle" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+           <!-- <a class="dropdown-toggle" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             <i class="fa fa-globe"></i>
-            </a>
+            </a>-->
             <ul class="dropdown-menu" aria-labelledby="notificationsMenu" id="notificationsMenu">
                 <li class="dropdown-header">No notifications</li>
             </ul>
