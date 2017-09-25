@@ -84,7 +84,7 @@
                    
                 </li>
                 <li>
-                    <a href="notifications.html">
+                    <a href="#">
                         <i class="pe-7s-bell"></i>
                         <p>Notifications</p>
                     </a>

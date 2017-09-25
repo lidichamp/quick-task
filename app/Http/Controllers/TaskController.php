@@ -153,4 +153,6 @@ class TaskController extends Controller
             return redirect('viewtask')->with('message','You have successfully deleted task');
             
           }
+
+          
 }

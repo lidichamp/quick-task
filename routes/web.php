@@ -12,6 +12,7 @@
 */
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function()
 {
     Route::get('/project/', 'ProjectController@getview')->name('project');
@@ -36,5 +37,6 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/movetask/{id}/', 'TaskController@movetask')->name('movetask');
     Route::get('/deletetask/{id}/', 'TaskController@getDelete')->name('deletetask');
     Route::get('/notifications', 'TaskController@notifications');
+   
     
 });

@@ -19,7 +19,7 @@
                         </li>
                         <li>
                             <a href="#">
-                               Blog
+                            blog
                             </a>
                         </li>
                     </ul>
@@ -65,7 +65,7 @@
 
         	$.notify({
             	icon: 'pe-7s-alarm',
-            	message: "Task  - is expiring today."
+            	message:"{{ getTimetodeadline() }}"
 
             },{
                 type: 'info',
