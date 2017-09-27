@@ -205,21 +205,7 @@
       e.stopPropagation();
     });
   });
-  @if(Session::has('success'))
-    alert("{{Session::get('success')}}");
-  @endif
-
-  @if(isset($error))
-    alert("{{$error}}");
-  @endif
-
-  @if(Session::has('error'))
-    alert("{{Session::get('error')}}");
-  @endif
-
-  @if(Session::has('message'))
-    alert("{{Session::get('message')}}");
-  @endif
+ 
   </script>
   @if ($errors->any())
     <div class="alert alert-danger">

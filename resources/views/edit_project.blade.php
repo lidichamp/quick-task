@@ -18,7 +18,7 @@
                         <label for="Project" class="col-sm-3 control-label">Project Title</label>
         
                         <div class="col-sm-6">
-                            <input type="text" name="title" id="title" placeholder="{{$project->title}}" class="form-control">
+                            <input type="text" name="title" id="title" value="{{$project->title}}" class="form-control">
                         </div>
                     </div>
                     

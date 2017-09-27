@@ -43,15 +43,67 @@
         	demo.initChartist();
 
         	$.notify({
-            	icon: 'pe-7s-bell',
+            	icon: 'pe-7s-hourglass',
             	message:"{{ getTimetodeadline() }}"
 
             },{
                 type: 'danger',
                 timer: 4000
+               
             });
 
     	});
+        @if(Session::has('success'))
+        $.notify({
+            	icon: 'pe-7s-check',
+            	message:"{{Session::get('success')}}"
+
+            },{
+                type: 'success',
+                timer: 4000
+               
+            });
+    
+  @endif
+
+  
+
+ 
+  @if(Session::has('message'))
+        $.notify({
+            	icon: 'pe-7s-check',
+            	message:"{{Session::get('message')}}"
+
+            },{
+                type: 'success',
+                timer: 4000
+               
+            });
+    
+  @endif
+  @if(Session::has('error'))
+        $.notify({
+            	icon: 'pe-7s-check',
+            	message:"{{Session::get('error')}}"
+
+            },{
+                type: 'success',
+                timer: 4000
+            });
+    
+  @endif
+  @if(isset($error))
+        $.notify({
+            	icon: 'pe-7s-help',
+            	message:"{{$error}}"
+
+            },{
+                type: 'danger',
+                timer: 4000
+            });
+    
+  @endif
+ 
 	</script>
 
 </html>
