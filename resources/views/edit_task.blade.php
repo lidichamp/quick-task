@@ -16,24 +16,31 @@
                     <!-- Project Name -->
                     
                     <div class="form-group">
-                        <label for="Project" class="col-sm-3 control-label">Task Title</label>
+                        <label for="Task" class="col-sm-3 control-label">Task Title</label>
         
                         <div class="col-sm-6">
-                            <input type="text" name="task-title" id="task-title" placeholder="{{$task->title}}" class="form-control">
+                            <input type="text" name="task-title" id="task-title" value="{{$task->title}}" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="Project" class="col-sm-3 control-label">Task other names</label>
+                        <label for="name1" class="col-sm-3 control-label">Task other names</label>
         
                         <div class="col-sm-6">
-                            <input type="text" name="task-title" id="task-title" placeholder="{{$task->name1}},{{$task->name2}}" class="form-control">
+                            <input type="text" name="name1" id="name1" value="{{$task->name1}}" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name2" class="col-sm-3 control-label">Task other names</label>
+        
+                        <div class="col-sm-6">
+                            <input type="text" name="name2" id="name2" value="{{$task->name2}}" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="Project" class="col-sm-3 control-label">Task Description</label>
         
                         <div class="col-sm-6">
-                            <textarea rows="5" name="task-description" id="task-description" placeholder="{{$task->description}}" class="form-control"></textarea>
+                            <textarea rows="5" name="task-description" id="task-description"  class="form-control">{{$task->description}}</textarea>
                         </div>
                     </div>
                     <!-- Select Basic -->
@@ -57,7 +64,7 @@
                         <label for="task" class="col-sm-3 control-label">Task Deadline</label>
         
                         <div class="col-sm-6">
-                            <input type="date" name="expiry" id="expiry" placeholder="{{$task->expiry_date}}"class="form-control">
+                            <input type="date" name="expiry" id="expiry" value="{{$task->expiry_date}}"class="form-control">
                         </div>
                     </div>
                     <!-- Add Project Button -->

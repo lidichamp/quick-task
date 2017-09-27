@@ -84,7 +84,7 @@ class TaskController extends Controller
         //return View::make('edit_project')
            // ->with('project', $project);
     }
-    public function tasktime($id)
+   /* public function tasktime($id)
     {
         $task=Task::find($id)->expirydate->diffInHours(Carbon\Carbon::now(), false);
         $user=Auth::user();
@@ -95,6 +95,19 @@ class TaskController extends Controller
 
             return back()->withSuccess("your task{{$task->title}} expires soon");
         }
+    }*/
+    public function notifiy()
+    {
+        $user=Auth::user();
+        $task=Task::find($id)->expirydate->diffInHours(Carbon\Carbon::now(), false);
+        if ( task<=24 && task>=0) {
+            
+            // add this to send a notification
+            $user->notify(new TaskToDo($task));
+
+           
+        }
+        
     }
     public function notifications()
     {
@@ -114,7 +127,7 @@ class TaskController extends Controller
        $updatetask->expiry_date= $request['expiry'];
        $updatetask->project_id= $request['project'];
         $updatetask->update();
-        return redirect('viewtask')->with('message','You have successfully edited project');
+        return redirect('viewtask')->with('message','You have successfully edited your task');
     }
  
     public function viewmovetask($id)

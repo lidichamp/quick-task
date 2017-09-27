@@ -23,14 +23,14 @@
                         <label for="task" class="col-sm-3 control-label">Other name 1</label>
         
                         <div class="col-sm-6">
-                            <input type="text" name="name1" id="name1" class="form-control">
+                            <input type="text" value="none "name="name1" id="name1" class="form-control" >
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="task" class="col-sm-3 control-label">Other name 2</label>
+                        <label for="task" class="col-sm-3 control-label" >Other name 2</label>
         
                         <div class="col-sm-6">
-                            <input type="text" name="name2" id="name2" class="form-control">
+                            <input type="text" value="none"name="name2" id="name2" class="form-control">
                         </div>
                     </div>
                     <!-- Task description-->

@@ -18,7 +18,7 @@ use Carbon\Carbon;
             // add this to send a notification
            
 
-           $notificationmessage="your task {$task->title} expires in less than 1 day";
+           $notificationmessage="your task -{$task->title}- expires in less than 1 day";
          return $notificationmessage;
          }
          

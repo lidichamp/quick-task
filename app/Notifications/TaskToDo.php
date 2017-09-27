@@ -7,10 +7,10 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class TaskToDo extends Notification
+class TaskToDo extends Notification implements ShouldQueue
 {
     use Queueable;
-    protected $follower;
+    protected $user;
     
         public function __construct(Task $expiry_date)
         {
@@ -19,7 +19,7 @@ class TaskToDo extends Notification
     
         public function via($notifiable)
         {
-            return ['database'];
+            return ['database','mail'];
         }
     
         public function toDatabase($notifiable)
@@ -54,5 +54,19 @@ class TaskToDo extends Notification
         return [
             //
         ];
+    }
+    public function toMail($notifiable)
+    {
+        $url = url('/warning/'.$this->id);
+    
+        return (new MailMessage)
+                    ->greeting('Hello!')
+                    ->line('One of your task is expiring is less than 24 hours!')
+                    ->action('View Task', $url)
+                    ->line('Thank you for using Quick Task!');
+    }
+    public function routeNotificationForMail()
+    {
+        return $this->email_address;
     }
 }

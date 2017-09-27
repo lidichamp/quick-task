@@ -43,11 +43,11 @@
         	demo.initChartist();
 
         	$.notify({
-            	icon: 'pe-7s-alarm',
+            	icon: 'pe-7s-bell',
             	message:"{{ getTimetodeadline() }}"
 
             },{
-                type: 'info',
+                type: 'danger',
                 timer: 4000
             });
 

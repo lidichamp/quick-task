@@ -40,10 +40,10 @@
                                             </button></a>
                                 <td class="text-primary"> status</td>
                                     <td class="text-primary">Title</td>
-                                    <td class="text-primary">Other Name</td>
-                                    <td class="text-primary">Other Name2</td>
-                                    <td class="text-primary">Description</td>
-                                    <td class="text-primary">Creation Date</td>
+                                    <td class="text-primary">Name 1</td>
+                                    <td class="text-primary">Name 2</td>
+                                    <td class="text-primary">Details</td>
+                                    <td class="text-primary">Created</td>
                                     <td class="text-primary">Deadline</td>
                                     <td class="text-primary">Project</td>
                                     <td class="text-primary">Actions</td>
